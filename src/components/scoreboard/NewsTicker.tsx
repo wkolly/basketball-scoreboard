@@ -81,7 +81,7 @@ const NewsTicker: React.FC = () => {
       overflow: "hidden"
     }}>
       <div className="ticker-wrap">
-        <div className="ticker" style={{ animation: "scroll 30s linear infinite" }}>
+        <div className="ticker" style={{ animation: "scroll 300s linear infinite" }}>
           {tickerItems.map((item) => (
             <span key={item.id} className="ticker-item" style={{ marginRight: "40px" }}>
               {item.text}
