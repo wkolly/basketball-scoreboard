@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+Basketball Scoreboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my basketball scoreboard web application built for the IS 542 Semester Project. It simulates a real gymn scoreboard with controls for keeping track of basketball game stats, time, and scores.
+Project Description
+I built a digital basketball scoreboard that looks like the ones you'd see in a high school or college gym. The app has two main parts - the scoreboard display and a control panel. The scoreboard shows team scores, the game clock, quarter/period, fouls, timeouts, and possession. I also added a news ticker at the bottom that pulls in live basketball scores from an API.
+The app is built with React and TypeScript. I used the Rapid NBA API for state management to keep track of all the game data in one place. For the UI, I separated everything into display components and control components to keep the code organized.
+Instructions to Run the Project
 
-## Available Scripts
+Clone the repository
 
-In the project directory, you can run:
+git clone https://github.com/yourusername/basketball-scoreboard.git
+cd basketball-scoreboard
 
-### `npm start`
+Install dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+npm install
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Create a .env file in the project root and add your RapidAPI key (if you want to use the live scores feature)
 
-### `npm test`
+REACT_APP_RAPIDAPI_KEY=your-api-key-here
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Start the development server
 
-### `npm run build`
+npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Open your browser and go to http://localhost:3000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+API Used and Data Handling
+I integrated the NBA API from RapidAPI to get live basketball scores for the news ticker. The app fetches data from the API and displays it in a scrolling ticker at the bottom of the scoreboard.
+The API data is handled in the sportsApi.ts file, which makes the API calls and transforms the response into the format my app needs. If the API call fails or there are no live games, the app handles this by showing a message in the ticker.
+The main game data is managed through React's Context API in the ScoreboardContext.tsx file. This creates a central store for all the game state like scores, clock time, and fouls. Components can dispatch actions to update this state, which keeps the data flow clean and predictable.
+Additional Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Full Screen Mode: I added a full-screen mode that's perfect for displaying the scoreboard on a projector or large screen during actual games.
+Custom Game Clock: The clock has different display formats (MM for regular time, and M.T for the last minute with tenths of seconds).
+Possession arrows
+Period Tracking: The app correctly handles quarters, overtime periods, and automatically labels them properly.
+Responsive Design: The scoreboard works well on both desktop and mobile devices.
+Team Customization: Team names can be changed on the fly through the control panel.
+Quick Preset Times: Added common time presets for fast clock setting during timeouts.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
