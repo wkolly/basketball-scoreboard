@@ -221,6 +221,7 @@ body {
   white-space: nowrap;
   padding-right: 100%;
   box-sizing: content-box;
+  animation: scroll 300s linear infinite;
 }
 
 .ticker-item {
