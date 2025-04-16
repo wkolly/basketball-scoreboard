@@ -8,7 +8,7 @@ Instructions to Run the Project
 
 Clone the repository
 
-git clone https://github.com/yourusername/basketball-scoreboard.git
+git clone https://github.com/wkolly/basketball-scoreboard.git
 cd basketball-scoreboard
 
 Install dependencies
