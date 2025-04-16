@@ -1,16 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "npm install --legacy-peer-deps && npm run build:debug",
-  "outputDirectory": "build",
-  "framework": "create-react-app",
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
-  ],
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node"
-    }
-  ]
+  "public": true,
+  "cleanUrls": true
 } 
